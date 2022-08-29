@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo Arief</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" >
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js" type="text/javascript"></script>
+</head>
+<body>
+    <div class="col-md-12">
+        <div class="alert alert-info alert-dismissible fade show" role="alert">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;TODO LIST APP 
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="float-left">
+            <h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Activity&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</h2>
+        </div>
+        <div class="float-center">
+            <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalActivityGroup">Tambah Activity Group</button> 
+        </div>
+        
+    </div>
+    <br/>
+    <br/>
+    <br/>
+  
+    <div class="col-lg-12 col-md-12">
+        <!-- small box -->
+        <div class="scrollbar-primary carddb thin">
+          <div class="inner">
+            <div class="container-fluid">
+              <div class="row" id="div_activity">
+              </div>
+            </div>
+         </div>
+        </div>
+    </div> 
+    
+    <div class="modal fade" id="modalActivityGroup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+    aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Add Activity Group</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                    <i class="fas fa-user prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="form34">Title</label>
+                    <input type="text" id="title_activity_group" class="form-control validate">           
+                    </div>
+
+                    <div class="md-form mb-5">
+                    <i class="fas fa-envelope prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="form29">Your email</label>
+                    <input type="email" id="email_activity_group" class="form-control validate">            
+                    </div>
+
+                    <div class="md-form mb-5">
+                    <i class="fas fa-tag prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="form32">Comment</label>
+                    <input type="text" id="comment_activity_group" class="form-control validate">           
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-primary" type="button" id="send_activity_group">Send</button> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Untuk Get Detail Activity -->
+    <div class="modal fade" id="modalDetailActivityGroup" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <h2>Daftar List Group</h2>
+                <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalTodoItems">Tambah Todo</button>
+                <input type="hidden" id="get_id_activity_group">
+                <ul class="list-group" id="detail_activity_group"> 
+                </ul>                
+            </div>
+        </div>
+    </div>
+
+    <!-- Add Todo Items -->
+    <div class="modal fade" id="modalTodoItems" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header text-center">
+                    <h4 class="modal-title w-100 font-weight-bold">Add Todo Items</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body mx-3">
+                    <div class="md-form mb-5">
+                    <i class="fas fa-user prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="form34">Title</label>
+                    <input type="text" id="title_todo_items" class="form-control validate"> 
+                    <input type="hidden" id="add_id_group_activity"/>          
+                    </div>
+                    <div class="md-form mb-5">
+                    <i class="fas fa-tag prefix grey-text"></i>
+                    <label data-error="wrong" data-success="right" for="form32">Comment</label>
+                    <input type="text" id="comment_todo_items" class="form-control validate">           
+                    </div>
+                </div>
+                <div class="modal-footer d-flex justify-content-center">
+                    <button class="btn btn-primary" type="button" id="send_todo_items">Send</button> 
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
